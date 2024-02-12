@@ -93,7 +93,12 @@ class RentalAgency
     // Function to print the rented cost of vehicle which the customer rented
     public void rentalCost(Vehicle vh,Customer cs)
     {
-        System.out.println("Cost of vehicle is "+vh.CalculateRentalCost()*cs.days + " that was rented by "+cs.name);
+        int total = 0;
+        for(Vehicle i:cs.VehicleList.values())
+        {
+            total = total + (i.rentalPrice * cs.days);
+        }
+        System.out.println("Cost of vehicle is " + total+ " that was rented by "+cs.name);
     }
 
     //  Method to print the numbers of cars that are present in the Agency
