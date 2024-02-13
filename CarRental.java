@@ -90,6 +90,12 @@ class RentalAgency
         AllVehicles.put(vh.getYear(),vh);
     }
 
+    // Function for Returning the cars that customer Rented
+    public void AddingReturn(Customer cs)
+    {
+        AllVehicles.putAll(cs.VehicleList);
+    }
+
     // Function to print the rented cost of vehicle which the customer rented
     public void rentalCost(Vehicle vh,Customer cs)
     {
@@ -136,7 +142,6 @@ public class CarRental {
         
         // Creating cutomer
         Customer Manas = new Customer("Manas", "manaskhanna611@gmail.com", 2);
-        // Customer Saksham = new Customer("Saksham", "Saksham@11", 5);
 
         System.out.println("List of cars that Available out in Agency having year");
         Khanna.ListOfCar();
@@ -147,6 +152,7 @@ public class CarRental {
         Manas.RentedVehicle(I20);
         
         Manas.VehicleList();
+
         
         System.out.println("List of cars that Available out in Agency having year ");
 
@@ -154,6 +160,10 @@ public class CarRental {
 
         // Check for cars that are left after renting
         Khanna.rentalCost(Alto, Manas);
+
+        Khanna.AddingReturn(Manas);
+
+        Khanna.ListOfCar();
         
     }
 }
